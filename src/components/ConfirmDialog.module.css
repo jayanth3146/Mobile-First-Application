@@ -1,0 +1,48 @@
+.message {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.cancelButton {
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.cancelButton:hover {
+  background: var(--color-bg);
+}
+
+.confirmButton {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--color-danger);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.confirmButton:hover {
+  filter: brightness(0.92);
+}
+
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column-reverse;
+  }
+  .cancelButton, .confirmButton {
+    width: 100%;
+    text-align: center;
+  }
+}

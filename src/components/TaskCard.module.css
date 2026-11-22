@@ -1,0 +1,151 @@
+.card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 0.975rem;
+  font-weight: 700;
+}
+
+.category {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.category::before {
+  content: '\2022';
+  margin-right: var(--space-2);
+}
+
+.description {
+  margin-top: var(--space-1);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  max-width: 60ch;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.dueDate {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.overdue {
+  color: var(--color-danger);
+}
+
+.overdueTag {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.statusControl {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statusLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.statusSelect {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  font-size: 0.8rem;
+  min-width: 128px;
+}
+
+.iconActions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+}
+
+.iconButton:hover {
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+.iconButton.danger:hover {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+@media (max-width: 680px) {
+  .card {
+    flex-direction: column;
+  }
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .statusSelect {
+    min-width: 0;
+    width: 100%;
+  }
+  .statusControl {
+    flex: 1;
+  }
+}

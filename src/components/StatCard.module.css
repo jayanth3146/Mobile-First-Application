@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+}
+
+.default .iconWrap { background: var(--color-bg); color: var(--color-text-secondary); }
+.primary .iconWrap { background: var(--color-primary-soft); color: var(--color-primary); }
+.info .iconWrap { background: var(--color-info-soft); color: var(--color-info); }
+.success .iconWrap { background: var(--color-success-soft); color: var(--color-success); }
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
