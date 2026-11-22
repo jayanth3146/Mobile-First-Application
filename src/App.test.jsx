@@ -8,6 +8,28 @@ beforeEach(() => {
 });
 
 describe('FocusBoard App', () => {
+  it('switches between dark and light themes and persists the selection', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const header = screen.getByRole('banner');
+    const darkButton = within(header).getByRole('button', { name: 'Dark' });
+    const lightButton = within(header).getByRole('button', { name: 'Light' });
+
+    expect(darkButton).toHaveAttribute('aria-pressed', 'true');
+    expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
+
+    await user.click(lightButton);
+    expect(lightButton).toHaveAttribute('aria-pressed', 'true');
+    expect(document.documentElement).toHaveAttribute('data-theme', 'light');
+    expect(window.localStorage.getItem('focusboard_theme')).toBe('"light"');
+
+    await user.click(darkButton);
+    expect(darkButton).toHaveAttribute('aria-pressed', 'true');
+    expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
+    expect(window.localStorage.getItem('focusboard_theme')).toBe('"dark"');
+  });
+
   it('renders at least six sample tasks on first load', () => {
     render(<App />);
     const list = screen.getByRole('list', { name: /tasks/i });

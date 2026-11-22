@@ -1,10 +1,11 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
 import TaskForm from './components/TaskForm';
 import ConfirmDialog from './components/ConfirmDialog';
 import { useTasks } from './hooks/useTasks';
+import { useLocalStorage } from './hooks/useLocalStorage';
 import { calculateStats, filterTasks } from './utils/taskHelpers';
 import styles from './App.module.css';
 
@@ -16,6 +17,7 @@ import styles from './App.module.css';
 function App() {
   const { tasks, addTask, editTask, removeTask, changeStatus } = useTasks();
 
+  const [theme, setTheme] = useLocalStorage('focusboard_theme', 'dark');
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
@@ -23,6 +25,10 @@ function App() {
   const [isFormOpen, setFormOpen] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
   const [confirmTarget, setConfirmTarget] = useState(null);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
   const stats = useMemo(() => calculateStats(tasks), [tasks]);
   const filteredTasks = useMemo(
@@ -75,7 +81,12 @@ function App() {
       <Sidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       <div className={styles.content}>
-        <Header onAddTask={openCreateForm} onOpenSidebar={() => setSidebarOpen(true)} />
+        <Header
+          onAddTask={openCreateForm}
+          onOpenSidebar={() => setSidebarOpen(true)}
+          theme={theme}
+          onThemeChange={setTheme}
+        />
         <Dashboard
           stats={stats}
           tasks={filteredTasks}

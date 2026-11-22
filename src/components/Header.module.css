@@ -44,6 +44,29 @@
   color: var(--color-text-secondary);
 }
 
+.themeToggle {
+  display: flex;
+  flex-shrink: 0;
+  padding: 2px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.themeToggle button {
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.themeToggle button[aria-pressed='true'] {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
 .addButton {
   display: inline-flex;
   align-items: center;
@@ -70,6 +93,21 @@
 }
 
 @media (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .titleBlock {
+    flex: 1;
+  }
+  .themeToggle {
+    order: 1;
+    flex-basis: calc(100% - 64px);
+    margin-left: 56px;
+  }
+  .themeToggle button {
+    flex: 1;
+  }
   .subtitle {
     display: none;
   }

@@ -1,11 +1,58 @@
 :root {
-  --color-bg: #f5f6fb;
+  --color-bg: #09090b;
+  --color-surface: #141416;
+  --color-border: #27272a;
+  --color-border-strong: #3f3f46;
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+
+  --color-primary: #8b7bff;
+  --color-primary-hover: #7665f4;
+  --color-primary-soft: #211d3a;
+  --color-on-primary: #ffffff;
+
+  --color-success: #4ade80;
+  --color-success-soft: #14291d;
+  --color-warning: #fbbf24;
+  --color-warning-soft: #30250f;
+  --color-danger: #f87171;
+  --color-danger-soft: #32191a;
+  --color-info: #60a5fa;
+  --color-info-soft: #14253a;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --sidebar-width: 260px;
+  --transition-fast: 150ms ease;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
   --color-border: #e4e7ef;
   --color-border-strong: #d4d8e3;
   --color-text-primary: #171a2b;
   --color-text-secondary: #5f6579;
-  --color-text-muted: #9499ab;
+  --color-text-muted: #777d90;
 
   --color-primary: #4f46e5;
   --color-primary-hover: #4338ca;
@@ -21,27 +68,9 @@
   --color-info: #1d4ed8;
   --color-info-soft: #e5edff;
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-full: 999px;
-
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-
   --shadow-sm: 0 1px 2px rgba(23, 26, 43, 0.06);
   --shadow-md: 0 6px 16px rgba(23, 26, 43, 0.08);
   --shadow-lg: 0 16px 40px rgba(23, 26, 43, 0.16);
-
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-
-  --sidebar-width: 260px;
-  --transition-fast: 150ms ease;
   color-scheme: light;
 }
 
